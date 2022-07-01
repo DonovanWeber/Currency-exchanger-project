@@ -5,8 +5,9 @@ import "./../css/styles.css";
 import CurrencyService from "./../js/currency-service.js";
 
 function clearFields() {
-  $("#output-exchanged").empty();
+  $("#output-exchange").text('');
 }
+
 function clearError() {
   $('#output-error').empty();
 }
@@ -20,20 +21,22 @@ $(document).ready(function() {
     promise.then((response) => {
       const body = JSON.parse(response);
       console.log(body);
-      if (body.conversion_result > 0) {
+      if (body.conversion_result >= .01) {
         $("#output-exchange").text(`The value of ${amount} USD is ${body.conversion_result} ${currencyToExchange}`);
         clearError();
       } else {
         $("#output-error").text(`please enter an amount to receive an exchange`);
+        clearFields();
       }
     }, function(error) {
       console.log(error.result);
-      clearFields();
       if (error.result === undefined) {
-
+        
         $("#output-error").text(`This currency is unavailable: (${currencyToExchange}) please choose a different one`);
+        clearFields();
       } else {
         $("#output-error").text(`There was an error processing your request ${error}`);
+        clearFields();
       }
       return false;
     });
