@@ -10,8 +10,25 @@
 <h1>Currency Exchanger</h1>
 <form>
   <div class="contaier">
-    <input placeholder="amount" id="amount" type="text">
-    <input 
+    <input placeholder="amount" id="amount" type="number">
+    <label for="currency">Choose which currency you'd like to convert into:</label>
+    <select id="currency" name="currency">
+      <option value="AED">United Arab Emirates Dirham</option>
+      <option value="AFN">Afghan Afghani</option>
+      <option value="ALL">Albanian Lek</option>
+      <option value="AMD">Armenian Dram</option>
+      <option value="ANG">Netherlands Antillean Guilder</option>
+      <option value="AOA">Kwanza</option>
+      <option value="ARS">Argentine Peso</option>
+      <option value="AUD">Australian Dollar</option>
+      <option value="AWG">Guilder</option>
+      <option value="AZN">Manat</option>
+      <option value="BAM">Convertible Mark</option>
+      <option value="BBD">Barbadian Dollar</option>
+      <option value="BDT">Taka</option>
+      <option value="BGN">Bulgarian Lev</option>
+
+    </select>
 
     <button type="submit" id="exchange">Exchange Rate</button>
   </div> 

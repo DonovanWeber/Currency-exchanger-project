@@ -6,11 +6,20 @@ import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./../css/styles.css";
+import CurrencyService from "./src/js/currency-service.js";
 
 $(document).ready(function() {
   $("form#form").submit(function(event){
     event.preventDefault();
-    $("#currency").
-
+    const amount = $("#amount").val();
+    const currencyToExchange = $('#currency').val();
+    
+    let promise = CurrencyService.getCurrency(amount, currencyToExchange);
+    promise.then((response) => {
+      const body = JSON.parse(response);
+      $("output-exchange").text(`The value of USD to ${currencyToExchange} is ${body.conversion_rate}`);
+    }, function(error) {
+      $("#output-error").text(`There was an error processing your request: ${error}`)
+    });
   })
-})
+});
