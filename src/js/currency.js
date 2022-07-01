@@ -28,11 +28,11 @@ $(document).ready(function() {
       }
     }, function(error) {
       console.log(error.result);
+      clearFields();
       if (error.result === undefined) {
-        clearFields();
+
         $("#output-error").text(`This currency is unavailable: (${currencyToExchange}) please choose a different one`);
       } else {
-        clearFields();
         $("#output-error").text(`There was an error processing your request ${error}`);
       }
       return false;

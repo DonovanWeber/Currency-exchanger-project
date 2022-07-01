@@ -1,3 +1,25 @@
 body {
   background-color: azure;
 }
+h1 {
+  font-family: fantasy;
+}
+
+form {
+  background-color: rgb(140, 215, 140);
+  width: auto;
+  margin: auto;
+}
+#amount { 
+  border-radius: auto;
+  border-style: groove;
+  border-color: aquamarine;
+}
+#exchange {
+  border-left: 20%;  
+}
+#output-exchange {
+  float: left;
+  width: auto;
+  margin: auto;
+}

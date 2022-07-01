@@ -13,7 +13,7 @@
     <input placeholder="USD amount" id="amount" type="number" min='0' step=".01">
     <label for="currency">Choose which currency you'd like to convert into:</label>
     <br>
-    <select id="currency" name="currency">
+    <select id="currency" name="currency" class="form-control form-control">
       <option value="OTR">Other</option>
       <option value="AED">United Arab Emirates Dirham</option>
       <option value="AFN">Afghan Afghani</option>
@@ -176,10 +176,13 @@
       <option value="ZMW">Zambian Kwacha</option>
       <option value="ZWL">Zimbabwe Dollar</option>
     </select>
-    <button type="submit" id="exchange">Exchange Rate</button>
+    <br>
+    <button type="submit" id="exchange" class="btn-primary">Exchange Rate</button>
   </div> 
 </form>
 <div id="output-exchange"></div>
+<br>
+<br>
 <div id="output-error"></div>
 </body>
 </html>
