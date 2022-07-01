@@ -13,15 +13,19 @@ $(document).ready(function() {
     event.preventDefault();
     const amount = $("#amount").val();
     const currencyToExchange = $('#currency').val();
-    
+    console.log(amount);
     let promise = CurrencyService.getCurrency(amount, currencyToExchange);
     promise.then((response) => {
       const body = JSON.parse(response);
-      console.log(body);
-      $("#output-exchange").text(`The value of ${amount} USD to ${currencyToExchange} is ${body.conversion_result}`);
-    }, function(error) {
-      $("#output-error").text(`There was an error processing your request: ${error}`);
-      $("#output-error").text(`This currency: ${currencyToExchange} is unavailable`);
+      if (body !== 404) {
+        $("#output-exchange").text(`The value of ${amount} USD to ${currencyToExchange} is ${body.conversion_result}`);
+      } else {
+        $("#output-error").text(`This currency is currently unavailable: ${currencyToExchange}`);
+      }
     });
+  }, function(error) {
+    console.log(error);
+    $("#output-error").text(`There was an error processing your request: ${error}`);
+    return false;
   });
 });

@@ -10,11 +10,11 @@
 <h1>Currency Exchanger</h1>
 <form id="form">
   <div class="contaier">
-    
-    USD: <input placeholder="amount" id="amount" type="number" min='0' step=".01">
+    <input placeholder="USD amount" id="amount" type="number" min='0' step=".01">
     <label for="currency">Choose which currency you'd like to convert into:</label>
     <br>
     <select id="currency" name="currency">
+      <option value="OTR">Other</option>
       <option value="AED">United Arab Emirates Dirham</option>
       <option value="AFN">Afghan Afghani</option>
       <option value="ALL">Albanian Lek</option>
@@ -168,8 +168,7 @@
       <option value="WST">Samoa Tala</option>
       <option value="XAF">Central African Franc</option>
       <option value="XCD">East Caribbean Dollar</option>
-      <option value="XDR">IMF Special Drawing Rights
-</option>
+      <option value="XDR">IMF Special Drawing Rights</option>
       <option value="XOF">West African Franc</option>
       <option value="XPF">Pacific Franc</option>
       <option value="YER">Jemen Rial</option>
@@ -177,7 +176,6 @@
       <option value="ZMW">Zambian Kwacha</option>
       <option value="ZWL">Zimbabwe Dollar</option>
     </select>
-
     <button type="submit" id="exchange">Exchange Rate</button>
   </div> 
 </form>
