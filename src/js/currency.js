@@ -21,6 +21,7 @@ $(document).ready(function() {
       $("#output-exchange").text(`The value of ${amount} USD to ${currencyToExchange} is ${body.conversion_result}`);
     }, function(error) {
       $("#output-error").text(`There was an error processing your request: ${error}`);
+      $("#output-error").text(`This currency: ${currencyToExchange} is unavailable`);
     });
   });
 });
