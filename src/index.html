@@ -8,9 +8,9 @@
 </head>
 <body>
 <h1>Currency Exchanger</h1>
-<form>
+<form id="form">
   <div class="contaier">
-    <input placeholder="amount" id="amount" type="number">
+    <input placeholder="amount" id="amount" type="number" min='0' step=".01">
     <label for="currency">Choose which currency you'd like to convert into:</label>
     <select id="currency" name="currency">
       <option value="AED">United Arab Emirates Dirham</option>
